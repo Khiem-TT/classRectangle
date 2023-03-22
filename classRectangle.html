@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rectangle</title>
+</head>
+<body>
+<canvas id="canvas" width="500" height="600"></canvas>
+<script>
+    class Rectangle {
+        width;
+        height;
+
+        constructor(width, height) {
+            this.width = width;
+            this.height = height;
+        }
+
+        getWidth() {
+            return this.width;
+        }
+
+        getHeight() {
+            return this.height;
+        }
+
+        setWidth(width) {
+            this.width = width;
+        }
+
+        setHeight(height) {
+            this.height = height;
+        }
+
+        areaRect() {
+            return this.width * this.height;
+        }
+
+        perimeterRect() {
+            return 2 * (this.width + this.height);
+        }
+
+        createRect() {
+            let ctx = document.getElementById('canvas').getContext('2d');
+            ctx.fillStyle = 'green';
+            ctx.fillRect(100, 100, this.width, this.height);
+        }
+    }
+
+    let myRect = new Rectangle(500, 100);
+    console.log(myRect.getWidth());
+    console.log(myRect.getHeight());
+    myRect.setWidth(900);
+    myRect.setHeight(300);
+    myRect.createRect();
+    document.write(`Area: ${myRect.areaRect()} <br>`);
+
+    document.write(`Perimeter: ${myRect.perimeterRect()}`);
+</script>
+</body>
+</html>
